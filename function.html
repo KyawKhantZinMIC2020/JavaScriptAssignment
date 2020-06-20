@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Function</title>
+	<script type="text/javascript">
+		//block of code, self contained and complex program
+		function getData(){
+			//do something 
+			//By default a function returns undefined
+			//For multiple value, can return an object, or an array
+		}
+
+		getData() //function must be called
+		let result = getData() //assign
+		return value into a variable
+
+		//A function can have one or more argument
+		function getData(color){
+			//do something
+		}
+		function getData(color,age){
+			//do something
+		}
+
+		//passing parameters to the function 
+		function getData(color,age){
+			//do something
+		}
+
+		getData('green',24)
+		getData('black') //age is undefined in getData function
+		typeof age // undefined in getData function
+
+		//test with if() for undefined variables 
+		if(age){
+			//condition will be true if age is null, 0 or an empty string 
+		}
+
+		//Can add default value, so not passed
+		function getData(color = 'black',age=25){
+			//do something
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

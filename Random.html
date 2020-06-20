@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random</title>
+	<script type="text/javascript">
+		
+		//let mynum=7
+		let mynum=Math.floor(Math.random() * 10);
+		console.log(mynum)
+		let checknum=false
+		let i=1;
+
+		do
+		{
+			let Gnum=prompt("Enetr Guess number: ");
+
+			if(mynum==Gnum)
+			{
+				checknum=true
+				alert("Your num is correct "+i+" time");
+			}
+			else if(mynum<Gnum)
+			{
+				alert("Higher");
+			}
+			else if(mynum>Gnum)
+			{
+				alert("Lower");
+			}
+			i++
+		}while(!checknum)
+	
+	</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrays in JavaScript</title>
+	<script type="text/javascript">
+		//Objects
+		//a collection of elements
+
+		//initialize an empty array
+		const a=[]
+		const a=Array()
+
+		//pre-fill array
+		const a = [1,2,3]//literal syntax
+		const a = Arrays.of(1,2,3) // built-in function
+
+		//access any element of the array by referencing its index, which starts from zero
+
+		a[0] //1
+		a[1] //2
+		a[2] //3
+
+		// get the number of elements in the array 
+		const a = [1,2,3]
+		a.length //3
+
+		// can cut the array with assigning the lenght
+		a.lenght = 2
+		a //[1,2]
+
+		// add an element at the beginning of an array
+		a.unshift(0)
+		a.unshift(-2,-1)
+
+		// remove an item from the end of an array 
+		a.pop() //return the value
+
+		// remove an item from the beginning of an array
+		a.shift() //return the value
+
+		// join two or more arrays
+		const a= [1,2]
+		const b= [3,4]
+		const c=a.concat(b) // [1,2,3,4]
+		const c= [...a,...b] //[1,2,3,4](spread operator...)
+
+		a.includes(value) // return true or false
+		a.includes(value) // i => position
+
+		// hold any value, even value of different types
+		const a = [1,'Falvio', ['a','b']]
+		// Number, String, Array
+
+		//multi-dimensional arrays (matrix)
+		const matrix = [
+		[1, 2, 3],
+		[4, 5, 6],
+		[7, 8, 9]
+		]
+
+		matrix[0][1] //2
+		matrix[2][0] //7
+
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

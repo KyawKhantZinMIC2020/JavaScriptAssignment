@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Asynchorous Programming Callbacks and Promises in JavaScript</title>
+	<script type="text/javascript">
+		// a line of code is executed, then the next one is executed
+		// execute (line by line)
+		// using callbacks E.g (timers)
+
+		console.log('before')
+		//setTemeout show once...
+		setTimeout(() => {
+			//runs after 2 seconds
+			console.log('inside the function')
+		},2000)
+		console.log('after')
+
+		//Outputs
+		//before
+		//after
+		//inside the function
+	</script>
+</head>
+<body>
+
+</body>
+</html>

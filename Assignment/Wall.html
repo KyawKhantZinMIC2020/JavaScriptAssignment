@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Area of Wall and Floor</title>
+	<style type="text/css">
+		*
+		{
+			margin: 0;
+			padding: 0;
+			background-color:#ccc ;
+		}
+		form
+		{	
+			margin: 70px;
+			max-width: 800px;
+		}
+		fieldset
+		{
+			height: 195px;
+			border-radius: 10px;
+			border:3px dotted blue;
+		}
+
+		fieldset label
+		{
+			color: blue;
+			font-size: 23px;
+		}
+
+		#btn
+		{	
+			font-weight: bold;
+			font-size: 14px;
+			border:2px solid;
+			border-radius: 4px;
+			box-shadow:2px 3px gray;
+		}
+
+		#btn:hover
+		{	
+			background-color: white;
+			color: blue;
+		}
+
+		#tx
+		{
+			background-color: rgb(0,0,0,0.2);
+			border-radius: 7px;
+		}
+	</style>
+
+	<script type="text/javascript">
+
+		// Calculation for floor ...
+		function myCalculateFloor()
+		{
+			w = parseInt(document.myForm.r_width.value);
+			h = parseInt(document.myForm.r_height.value);
+			s =	parseInt(document.myForm.f_wh.value)**2;
+
+			res= w * h ;
+			res1 = (w * h)/s ;
+			FinalResult = res1 + (res1*0.05);
+
+			myWindow = window.open("" , "" ,"width=100px", "height=50px");
+
+			myWindow.document.write("The area of Room ="+" "+ res +" "+ "sq_ft<br>");
+			myWindow.document.write("The size of tiles =" + " " + s +" "+ "sq_ft<br>");
+			myWindow.document.write("Total tiles for room =" + " " +Math.round(FinalResult)+"<br>");
+
+		}
+
+		// Calculation for Wall
+		function myCalculateWall() 
+		{
+			w = parseInt(document.myForm.r_width.value) * 12 ; // change to inches (12 in = 1 ft)
+			h = parseInt(document.myForm.r_height.value) * 12 ;
+			w_w = parseInt(document.myForm.w_width.value);
+			w_h = parseInt(document.myForm.w_height.value);
+
+			res1 = w * h ;
+			res2 = w_w * w_h ;
+			FinalResult = res1/res2;
+
+			//for output screen , new window
+			myWindow = window.open("" , "" ,"width=100px", "height=50px");
+			myWindow.document.write("The area of room = " + " " + res1 + " " + "inches<br>");
+			myWindow.document.write("The size of tiles = " + " " + res2 + " " + " inches<br>");
+			myWindow.document.write("Total tiles for wall = " + " " + FinalResult+"<br>");
+
+		}
+
+		//Choice for floor and wall button	
+		function display()
+		{
+			if(document.getElementById('fl').checked) {
+				document.getElementById('floor').style.display = 'block';
+				document.getElementById('wall').style.display = 'none';
+			}
+
+			if (document.getElementById('wl').checked) {
+				document.getElementById('floor').style.display = 'none';
+				document.getElementById('wall').style.display ='block';
+			}
+		}
+	</script>
+</head>
+<body>
+	<center>
+	<form name="myForm">
+
+		<!-- Room -->
+		<fieldset>
+			<legend><font color="brown"><h2>Room</h2></font></legend><br><br>
+			<label for="r_width">Enter room's width:</label>
+			<input type="text" id="tx" name="r_width" size="25px">
+			<br>
+			<br>
+			<label for="r_height">Enter room's height:</label>
+			<input type="text" id="tx" name="r_height" size="25px">
+		</fieldset>
+		<br>
+
+		<!-- Tile -->
+		<fieldset>
+			<legend><font color="brown"><h2>Tiles</h2></font></legend>
+			<input type="radio" name="rd" id="fl" onclick="javascript : display()" checked="">Floor
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="radio" name="rd" id="wl" onclick="javascript : display()">Wall<br><br>
+
+
+			<!-- Floor -->
+			<div id="floor" style="display: block;">
+				<label for="f_wh">Enter width and height:</label>
+				<input type="text" id="tx" name="f_wh" size="25px">	
+				<input type="button" id="btn" value="Calculate" onclick="javascript: myCalculateFloor()">
+			</div><br>
+
+			<!-- Wall -->
+			<div id="wall" style="display: none;">
+				<label for="w_width">Eneter Wall's Width:</label>
+				<input type="text" id="tx" name="w_width" size="25px"><br><br>
+				<label for="w_height">Enter Wall's Height:</label>
+				<input type="text" id="tx" name="w_height" size="25px"><br><br>
+				<input type="button" id="btn" value="Calculate" onclick="javascript : myCalculateWall()">
+			</div> 
+		</fieldset>
+	</form>
+	</center>
+</body>
+</html>

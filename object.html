@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object in JavaScript</title>
+	<script type="text/javascript">
+		// dynamically typed
+		var a = 1 // int
+		b = 'test' //string
+
+		//weakly typed (not show error)
+		1 + '2' // '12'
+
+		//Everything is object
+		const car = {
+
+		} //object literal
+		const car = new Object()
+
+		// function
+		function Car(brand,model)
+		{
+			this.brand = brand
+			this.model =model
+		}
+
+		const myCar = new Car('Ford','Fiesta')
+		myCar.brand // 'Ford'
+		myCar.model // 'Fiesta'
+
+		//**********Properties*************
+		const car = {
+			color: 'white'
+			'the color': 'black'
+		} // in car object, color property and white value
+		  // For multiple properties, separate each property with a comma
+
+		  // Retrieving the value of a property
+		  // 1. dot notation
+		  car.color
+
+		  //2.square brackets
+		  car['the color']
+
+		  //If call doesn't have property
+		  car.brand //undefined
+
+		  //Nested Objects and Properties
+		  const car = {
+		  	brand: {
+		  		name: 'Ford'
+		  	},
+		  	color: 'blue'
+		  }
+
+		  car.brand.name // Ford
+		  car ['brand']['name'] // Ford
+
+		  //Always update later
+		  car.color = 'red'
+		  car.color  // red
+
+		  // Add new properties
+		  car.model = 'Fiesta'
+		  car.model // Fiesta
+
+		  //Delete a property
+		  delete car.brand
+
+		  //**********Method***********
+		  //Functions can be assigned to a function property called Methods 
+		  const car = {
+		  	brand: 'Ford',
+		  	model: 'Fiesta',
+		  	start: function(){
+		  		console.log('Started')
+		  	}
+		  }//function(){}
+
+		  car.start() // using with regular function
+
+		  // access other properties using "this" keyword
+		  const car = {
+		  	brand: 'Ford'
+		  	model: 'Fiesta'
+		  	start: function(){
+		  		console.log(`Started 
+		  			${this.brand} ${this.model}`)
+		  	}
+		  }
+
+		  //arrow functions are not bound to the object
+		  // the reason why regular functions are often used as object mehtods
+		  const car = {
+		  	brand: 'Ford'
+		  	model: 'Fiesta'
+		  	start: () => {
+		  		console.log(`Started
+		  			${this.brand} ${this.model}`)
+		  		//not going to work
+		  	}
+		  }
+
+		  //Methods can accept paremeters, like regular functions 
+		  const car = {
+		  	brand: 'Ford'
+		  	model: 'Fiesta'
+		  	goTo: function(destination){
+		  		console.log(`Going to ${destination}`)
+		  	}
+		  }
+
+		  car.goTo('Rome')
+		</script>
+	</head>
+	<body>
+
+	</body>
+	</html>

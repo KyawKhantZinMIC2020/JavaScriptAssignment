@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Classes in JavaScript</title>
+	<script type="text/javascript">
+		//define a common pattern for multiple objects.
+		//note the capital (P), a convention when using classes
+
+		class Person{
+			name
+		}
+
+		//initialize a flavio object (an instance - flavio)
+		const flavio = new Person()
+
+		//set the value of the name property
+		flavio.name= 'Flavio'
+		flavio.name // Flavio (access)
+
+		//Classes can hold properties,like name, and methods.
+
+		class Person()
+		{
+			hello(){ // Method
+				return "Hello, I am Flavio"
+			}
+		}
+
+		const falvio = new Person()
+		flavio.hello()
+
+		//a special method called constructor()
+		//to initialize the class properties when we create a new object instance
+
+		class Person{
+			constructor(name){
+				this.name = name
+			}
+
+			hello()
+			{
+				return 'Hello, I am '+ this.name +','
+
+			}
+		}
+
+		const flavio = new Person('flavio')
+		falvio.hello() //'Hello, I am flavio'
+
+		//Static Method no need to initialize
+		class Person{
+			static genericHello(){
+				return 'Hello'
+			}
+		}
+		Person.genericHello() //Hello
+	</script>
+</head>
+<body>
+
+</body>
+</html>

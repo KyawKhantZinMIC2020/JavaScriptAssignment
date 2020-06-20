@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inheritance In JavaScript</title>
+	<script type="text/javascript">
+		//************Ingeritance**************
+		// A class can extend another class
+
+		class Person{
+			hello(){
+				return 'Hello , I am a Person'
+			}
+		}
+
+		//Extend 
+		class Programmer extends Person {
+
+		}
+
+		// instantiate a new object with class Programmer 
+		const flavio = new Programmer()
+		flavio.hello() //'Hello, I am a Person'
+
+		//Inside a child class, can reference the parent class calling super()
+		class Programmer extends Person {
+			hello(){
+				return super.hello() +
+					'.I am also a programmer.'
+			}
+		}
+
+		const flavio = new Programmer()
+		flavio.hello() // Hello, I am a Person. I am also a programmer.
+	</script>
+</head>
+<body>
+
+</body>
+</html>
